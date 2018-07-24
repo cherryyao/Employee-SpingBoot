@@ -14,14 +14,26 @@ public class EmployeeService implements EmployeeDao {
 
     @Override
     public List<Employee> getAllEmployees() {
-//        List<Employee> list  = new ArrayList<>();
-//        list.add(new Employee(1,"Tom",21,"男"));
         return EmployeeList;
     }
 
     @Override
     public  List<Employee> addEmployees(int id,String name,int age,String gender){
         EmployeeList.add(new Employee(id,name,age,gender));
+        return EmployeeList;
+    }
+
+    @Override
+    public List<Employee> updateEmployee(int id,Employee employee){
+        for (Employee oldEmployee:EmployeeList)
+        {
+            if (id == employee.getId()){
+                oldEmployee.setName(employee.getName());
+                oldEmployee.setAge(employee.getAge());
+                oldEmployee.setGender(employee.getGender());
+                System.out.println(oldEmployee);
+            }
+        }
         return EmployeeList;
     }
 

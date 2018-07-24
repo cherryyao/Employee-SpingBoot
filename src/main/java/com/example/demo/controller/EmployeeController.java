@@ -28,6 +28,12 @@ public class EmployeeController {
         employeeService.addEmployees(id,name,age,gender);
     }
 
+    @PutMapping("/employees/{id}")
+    public List<Employee> update(@PathVariable int id,@RequestBody Employee employee)
+    {
+          return employeeService.updateEmployee(id,employee);
+    }
+
 
 
 
