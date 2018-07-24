@@ -3,8 +3,8 @@ package com.example.demo.controller;
 import com.example.demo.Service.EmployeeService;
 import com.example.demo.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,6 +17,17 @@ public class EmployeeController {
     public List<Employee> getAllEmployees(){
         return employeeService.getAllEmployees();
     }
+
+
+    @PostMapping("/employees")
+    public void add(@RequestBody Employee employee) {
+        int id = employee.getId();
+        String name = employee.getName();
+        int age = employee.getAge();
+        String gender = employee.getGender();
+        employeeService.addEmployees(id,name,age,gender);
+    }
+
 
 
 

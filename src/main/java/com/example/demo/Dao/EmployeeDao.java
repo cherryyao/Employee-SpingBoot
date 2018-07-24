@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface EmployeeDao {
     List<Employee> getAllEmployees();
+    List<Employee> addEmployees(int id,String name,int age,String gender);
+
 }
