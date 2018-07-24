@@ -38,15 +38,21 @@ public class EmployeeService implements EmployeeDao {
     }
 
     @Override
-    public List<Employee> deleteEmployee(int id,Employee employee){
+    public List<Employee> deleteEmployee(int id){
         for(Employee oldEmployee:EmployeeList){
-            System.out.println("id="+id);
-            System.out.println("old-id="+oldEmployee.getId());
-            System.out.println("employee-id="+employee.getId());
             if (id == oldEmployee.getId()){
-                System.out.println("%%%"+oldEmployee);
                 EmployeeList.remove(oldEmployee);
                return EmployeeList;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Employee searchEmployee(int id){
+        for(Employee oldEmployee:EmployeeList){
+            if (id == oldEmployee.getId()){
+                return oldEmployee;
             }
         }
         return null;
