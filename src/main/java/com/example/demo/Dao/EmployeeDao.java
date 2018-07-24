@@ -10,4 +10,6 @@ public interface EmployeeDao {
 
 
     List<Employee> updateEmployee(int id,Employee employee);
+
+    List<Employee> deleteEmployee(int id,Employee employee);
 }
