@@ -20,12 +20,12 @@ public class EmployeeController {
 
 
     @PostMapping("/employees")
-    public void add(@RequestBody Employee employee) {
+    public List<Employee> add(@RequestBody Employee employee) {
         int id = employee.getId();
         String name = employee.getName();
         int age = employee.getAge();
         String gender = employee.getGender();
-        employeeService.addEmployees(id,name,age,gender);
+        return employeeService.addEmployees(id,name,age,gender);
     }
 
     @PutMapping("/employees/{id}")

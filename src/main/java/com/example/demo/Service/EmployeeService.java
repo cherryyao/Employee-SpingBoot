@@ -27,7 +27,7 @@ public class EmployeeService implements EmployeeDao {
     public List<Employee> updateEmployee(int id,Employee employee){
         for (Employee oldEmployee:EmployeeList)
         {
-            if (id == employee.getId()){
+            if (id == oldEmployee.getId()){
                 oldEmployee.setName(employee.getName());
                 oldEmployee.setAge(employee.getAge());
                 oldEmployee.setGender(employee.getGender());
